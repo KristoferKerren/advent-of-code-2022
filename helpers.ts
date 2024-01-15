@@ -32,3 +32,29 @@ export function sum(
   }
   return tot;
 }
+
+function gcd(a: number, b: number): number {
+  while (b != 0) {
+    let t = b;
+    b = a % b;
+    a = t;
+  }
+  return a;
+}
+
+function lcm(a: number, b: number): number {
+  return (a * b) / gcd(a, b);
+}
+
+export function findLCD(arr: number[]): number {
+  return arr.reduce((a, b) => lcm(a, b));
+}
+
+export function findGCD(arr: number[]): number {
+  return arr.reduce((a, b) => gcd(a, b));
+}
+
+export function getInput(fileName: string): string[] {
+  const fs = require('fs');
+  return fs.readFileSync(fileName, 'utf8').replaceAll('\r', '').split('\n');
+}
