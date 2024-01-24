@@ -58,3 +58,7 @@ export function getInput(fileName: string): string[] {
   const fs = require('fs');
   return fs.readFileSync(fileName, 'utf8').replaceAll('\r', '').split('\n');
 }
+
+export function isEqual(arr1: any[], arr2: any[]) {
+  return arr1.length === arr2.length && arr1.every((v, i) => v === arr2.at(i));
+}
