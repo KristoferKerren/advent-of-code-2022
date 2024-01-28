@@ -1,6 +1,6 @@
 import { findGCD, findLCD, getInput, isEqual, memoize } from '../helpers';
 
-namespace adventOfCode19 {
+namespace adventOfCode20 {
   class FileElement {
     constructor(
       public value: number,
